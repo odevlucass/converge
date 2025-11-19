@@ -1,20 +1,8 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const reveals = document.querySelectorAll(".reveal");
+let mobileMenu = document.getElementById("mobileMenu");
+let menu = document.getElementById("menu");
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          // anima só uma vez:
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0.2,
-    }
-  );
+function abrirMenuMobile() {
+    menu.classList.toggle("active");
+}
 
-  reveals.forEach((el) => observer.observe(el));
-});
+mobileMenu.addEventListener('click', abrirMenuMobile);

@@ -17,12 +17,23 @@
             class="logoHeader"
           />
         </div>
-        <ul class="menuLinks">
+        <button
+          id="mobileMenu"
+          class="mobileMenu"
+          aria-controls="menu"
+          aria-expanded="false"
+          aria-label="Abrir menu de navegação"
+        >
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </button>
+        <ul id="menu" class="menuLinks">
           <li class="linkHome">Home</li>
           <li class="linkSobre">Sobre</li>
           <li class="linkAgenda">Agenda</li>
           <li class="linkFaq">FAQ</li>
-          <li class="linkPlanos">Planos</li>
+          <li class="linkPlanos">Ver Planos</li>
         </ul>
       </nav>
     </header>
@@ -94,13 +105,14 @@
           </div>
         </div>
       </section>
-      <section class="agenda"></section>
-      <section class="planos"></section>
+      <section class="planos">
+        <div class="containerPlanos">
+          <h2 class="tituloPlanos">Pronto para dar o próximo passo?</h2>
+          <a href="#">Ver todos os planos</a>
+        </div>
+      </section>
       <section class="depoimentos"></section>
       <section class="faq"></section>
     </main>
-    <footer>
-      <div class="containerFooter"></div>
-    </footer>
   </body>
 </html>

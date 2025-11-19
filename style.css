@@ -30,7 +30,8 @@
 }
 
 body {
-  background: var(--fundo-neutro);}
+  background: var(--fundo-neutro);
+}
 
 header {
   background: var(--fundo-neutro-alternativo);
@@ -40,7 +41,7 @@ header {
 .containerHeader {
   display: flex;
   max-width: 1200px;
-  height: 10dvh;
+  height: 15dvh;
   justify-content: space-between;
   flex-wrap: wrap;
   margin: 0 auto;
@@ -96,6 +97,19 @@ header {
 .linkPlanos:hover {
   background: var(--cor-secundaria);
   color: var(--cor-texto-principal);
+}
+
+.mobileMenu {
+  display: none;
+  cursor: pointer;
+}
+
+.mobileMenu div {
+  width: 32px;
+  height: 4px;
+  background: #fff;
+  margin: 8px;
+  border-radius: 24px;
 }
 
 main {
@@ -171,6 +185,8 @@ h1 {
 
 .containerBotoesSecundarioHome {
   display: flex;
+  width: 100%;
+  flex-wrap: wrap;
   gap: 8px;
 }
 
@@ -265,4 +281,104 @@ h1 {
   width: 32ch;
   font-family: var(--fonte-secundaria);
   color: var(--cor-texto-secundario);
+}
+
+.planos {
+  background: var(--cor-secundaria);
+  -webkit-box-shadow: inset 0px 0px 48px 24px rgba(0, 0, 0, 0.84);
+  box-shadow: inset 0px 0px 48px 24px rgba(0, 0, 0, 0.84);
+}
+
+.containerPlanos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+  max-width: 1200px;
+  height: 100dvh;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.tituloPlanos {
+  font-family: var(--fonte-principal);
+  font-size: var(--hero-h1);
+  color: var(--cor-texto-principal);
+}
+
+.containerPlanos a {
+  padding: 8px 24px;
+  border-radius: 12px;
+  font-family: var(--fonte-principal);
+  font-weight: var(--secoes-h2-weight);
+  color: var(--cor-texto-principal);
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 12px;
+}
+
+@media (max-width: 900px) {
+
+  
+  body {
+    overflow-x: hidden;
+  }
+  
+  header{ 
+    padding: 0 24px;
+  }
+
+  .mobileMenu {
+    display: block;
+    background: transparent;
+    border: none;
+  }
+  
+  .menuLinks {
+    flex-direction: column;
+    gap: 48px;
+    position: absolute;
+    top: 15dvh;
+    right: 0;
+    width: 295px;
+    height: 85dvh;
+    background: var(--fundo-neutro-alternativo);
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
+    z-index: 1;
+  }
+  
+  .menuLinks.active {
+    transform: translateX(0);
+  }
+  
+  .linkHome {
+    margin-top: 24px;
+  }
+
+  .containerHome, .containerSobre, .containerPlanos {
+    height: auto;
+    padding: 12px;
+  }
+
+  .tituloSobre, .tituloPlanos {
+    text-align: center;
+  }
+
+  .textoHome {
+    max-width: 100%;
+  }
+
+  .containerCardsSobre {
+    gap: 24px;
+  }
+
+  .containerCardSobre {
+    max-width: 100%;
+  }
+
+  .tituloPlanos {
+    font-size: var(--secoes-h2);
+  }
 }
